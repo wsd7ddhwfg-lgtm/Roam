@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roam — Landing Page Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFBEB;
+    --cream-2: #FEF3C7;
+    --text: #18181B;
+    --text-2: #52525B;
+    --border: #E4E4E7;
+    --accent: #FACC15;
+    --accent-2: #34D399;
+    --accent-chip: #854D0E;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 64px 40px 96px; }
+  .eyebrow {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-chip);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -1.2px;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.5px;
+    margin: 64px 0 16px;
+    border-top: 1px solid var(--border);
+    padding-top: 36px;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 32px 0 10px;
+  }
+  p { margin: 0 0 14px; font-size: 16px; }
+  p.lead { font-size: 19px; color: var(--text-2); margin-bottom: 36px; }
+  strong { font-weight: 600; }
+  em { font-style: italic; }
+  code {
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    background: var(--cream-2);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--text);
+  }
+  ul, ol { padding-left: 22px; margin: 0 0 16px; }
+  li { margin-bottom: 8px; font-size: 16px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 15px; }
+  th {
+    text-align: left;
+    font-weight: 600;
+    padding: 12px 14px;
+    background: var(--cream-2);
+    border-bottom: 1px solid var(--border);
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-chip);
+  }
+  td { padding: 14px; border-bottom: 1px solid var(--border); vertical-align: top; background: white; }
+  tr:last-child td { border-bottom: none; }
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 22px 26px;
+    border-radius: 8px;
+    margin-bottom: 48px;
+  }
+  .toc .label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-2);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .toc ol { margin: 0; padding-left: 22px; }
+  .toc a { color: var(--text); text-decoration: none; border-bottom: 1px solid transparent; }
+  .toc a:hover { border-bottom-color: var(--accent-chip); }
+  .callout {
+    background: var(--cream-2);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .callout .label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--accent-chip);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .callout p { margin: 0; }
+
+  /* Palette swatches */
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 20px 0 24px;
+  }
+  .swatch {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+  }
+  .swatch .color { height: 80px; width: 100%; }
+  .swatch .meta { padding: 10px 12px; }
+  .swatch .role {
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    color: var(--text-2);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .swatch .hex {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 2px;
+  }
+
+  /* Section list with badges */
+  .section-row {
+    display: flex;
+    gap: 16px;
+    align-items: start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-row:last-child { border-bottom: none; }
+  .section-num {
+    font-family: 'Geist Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-chip);
+    min-width: 32px;
+    padding-top: 1px;
+  }
+  .section-body { flex: 1; }
+  .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .section-desc { font-size: 14px; color: var(--text-2); margin: 0; }
+  .badge-new {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text);
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: 2px;
+  }
+
+  /* How it works cards preview */
+  .how-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 16px 0 32px;
+  }
+  .how-col {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .how-col h4 {
+    font-family: 'Anton', sans-serif;
+    font-size: 22px;
+    letter-spacing: -0.3px;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+  }
+  .how-step {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .how-step .n {
+    font-family: 'Geist Mono', monospace;
+    font-weight: 700;
+    font-size: 11px;
+    color: var(--accent-chip);
+    padding-top: 2px;
+    min-width: 22px;
+  }
+  .how-step .icon {
+    background: var(--accent);
+    border-radius: 4px;
+    padding: 3px 7px;
+    font-family: 'Geist Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text);
+    margin-right: 4px;
+    text-transform: lowercase;
+  }
+  .how-col.hosts .icon { background: var(--accent-2); }
+  .how-step .t {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .how-step .d {
+    color: var(--text-2);
+    font-weight: 400;
+  }
+
+  /* Voice grid */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .voice-card {
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+  }
+  .voice-card h4 {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+  }
+  .voice-card.yes h4 { color: #15803D; }
+  .voice-card.no h4 { color: #B91C1C; }
+  .voice-card ul { margin: 0; padding-left: 18px; }
+  .voice-card li { font-size: 14px; margin-bottom: 6px; }
+
+  .footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    color: var(--text-2);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="eyebrow">Roam · Landing Page Plan · 26 June 2026</div>
+<h1>Wellington's P2P vehicle rental marketplace.</h1>
+<p class="lead">A claim-free demand-test landing page. Tests whether Wellingtonians want a locally-built way to rent and share cars and campervans — with a single-checkbox tease for Roam Pass, the future paid perk layer.</p>
+
+<div class="toc">
+  <div class="label">In this plan</div>
+  <ol>
+    <li><a href="#overview">Project overview</a></li>
+    <li><a href="#status">Current status</a></li>
+    <li><a href="#design">Design system</a></li>
+    <li><a href="#sections">Page sections (10 total)</a></li>
+    <li><a href="#howitworks">"How It Works" — newest section</a></li>
+    <li><a href="#voice">Copy voice and claim rules</a></li>
+    <li><a href="#next">What's next (Phase B — Next.js build)</a></li>
+    <li><a href="#files">Files in this folder</a></li>
+  </ol>
+</div>
+
+<h2 id="overview">1 · Project overview</h2>
+<p><strong>Roam</strong> is a peer-to-peer vehicle rental marketplace for Wellington — open to anyone to rent or list. Renters borrow cars and campervans from locals; hosts earn from idle vehicles. Wellington is the launch market; the brand itself doesn't carry the city name.</p>
+<p><strong>Roam Pass</strong> is a future paid perk layer (DoorDash Pass model). Non-Pass users can still use Roam normally; Pass-holders get extras like premium vehicle access, host bonuses, and member events. The Pass is not built yet — its mention on the landing page is purely a demand signal (a single checkbox in the sign-up form).</p>
+<p><strong>This landing page is a demand test.</strong> It validates two things at once:</p>
+<ul>
+  <li>Will Wellingtonians sign up to use Roam (as renters, hosts, or both)?</li>
+  <li>How many of those signups also tick the Pass interest checkbox?</li>
+</ul>
+
+<h2 id="status">2 · Current status</h2>
+<table>
+  <thead><tr><th>Phase</th><th>Output</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>A · Mockup</td><td>Pencil file with D1–D5 + Citrus Pop palette sample</td><td><strong>Complete</strong> — current document of record</td></tr>
+    <tr><td>A · Copy refresh</td><td>All claim-free, confident, exciting language</td><td><strong>Complete</strong></td></tr>
+    <tr><td>A · "How It Works" addition</td><td>Two-column visual journey for Renters + Hosts</td><td><strong>Complete</strong> (this plan)</td></tr>
+    <tr><td>B · Next.js build</td><td>Real responsive site from D5</td><td>Next — separate planning round</td></tr>
+    <tr><td>C · Deploy</td><td>Vercel + Tally form + Google Sheet</td><td>After Phase B</td></tr>
+  </tbody>
+</table>
+
+<h2 id="design">3 · Design system — Citrus Pop</h2>
+<h3>Palette</h3>
+<div class="swatches">
+  <div class="swatch"><div class="color" style="background:#FFFBEB;border-bottom:1px solid var(--border)"></div><div class="meta"><div class="role">cream — surface</div><div class="hex">#FFFBEB</div></div></div>
+  <div class="swatch"><div class="color" style="background:#FEF3C7"></div><div class="meta"><div class="role">cream-2 — surface 2</div><div class="hex">#FEF3C7</div></div></div>
+  <div class="swatch"><div class="color" style="background:#18181B"></div><div class="meta"><div class="role">text</div><div class="hex">#18181B</div></div></div>
+  <div class="swatch"><div class="color" style="background:#FACC15"></div><div class="meta"><div class="role">accent — yellow</div><div class="hex">#FACC15</div></div></div>
+  <div class="swatch"><div class="color" style="background:#34D399"></div><div class="meta"><div class="role">accent-2 — mint</div><div class="hex">#34D399</div></div></div>
+</div>
+
+<h3>Typography</h3>
+<table>
+  <thead><tr><th>Role</th><th>Font</th><th>Used for</th></tr></thead>
+  <tbody>
+    <tr><td>Headlines</td><td><strong>Anton</strong></td><td>Section headlines, card titles, the energy of the page</td></tr>
+    <tr><td>Body</td><td><strong>Inter</strong></td><td>Subheads, descriptions, body copy, form fields</td></tr>
+    <tr><td>Captions / data</td><td><strong>Geist Mono</strong></td><td>Eyebrows, chips, step numbers, metadata labels</td></tr>
+  </tbody>
+</table>
+
+<h2 id="sections">4 · Page sections (10 total, top → bottom)</h2>
+
+<div class="section-row">
+  <div class="section-num">01</div>
+  <div class="section-body">
+    <div class="section-title">Navigation</div>
+    <p class="section-desc">Roam wordmark in Anton, 3 nav links, yellow pill "Get early access" CTA.</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">02</div>
+  <div class="section-body">
+    <div class="section-title">Hero with inline sign-up form</div>
+    <p class="section-desc">Chip eyebrow → giant Anton headline "Your car, your rules, your weekend." → Inter sub → inline form (3 interest checkboxes including Pass, name, email, yellow CTA, microcopy).</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">03</div>
+  <div class="section-body">
+    <div class="section-title">Hero photo strip</div>
+    <p class="section-desc">Full-width campervan/road landscape image.</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">04</div>
+  <div class="section-body">
+    <div class="section-title">Destinations bento</div>
+    <p class="section-desc">2×2 grid of NZ trip cards with photos: South Coast & Seal Coast, Wairarapa, Marlborough Sounds, Tongariro & Ruapehu.</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">05</div>
+  <div class="section-body">
+    <div class="section-title">How it works <span class="badge-new">New</span></div>
+    <p class="section-desc">Two columns of icon-led step cards. Yellow hero panels for Renters, mint hero panels for Hosts. The journey reads at a glance via icons; one-line descriptions reinforce how short the path is. See section below for full detail.</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">06</div>
+  <div class="section-body">
+    <div class="section-title">Why Roam</div>
+    <p class="section-desc">"BUILT LOCAL. BUILT TO LAST." section with 3 value cards: Built locally by locals, From weekend wagon to summer saga, Roam Pass is on the way.</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">07</div>
+  <div class="section-body">
+    <div class="section-title">Mid-page big sign-up</div>
+    <p class="section-desc">Charcoal full-bleed section with "JOIN THE FOUNDING WAVE." headline. Larger form card with the same 3 checkboxes + name + email + optional "What's on your mind" textarea. Yellow CTA: "Count me in →".</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">08</div>
+  <div class="section-body">
+    <div class="section-title">FAQ — "Straight Answers"</div>
+    <p class="section-desc">5 numbered items in editorial stacked list: When does this launch?, Who's behind this?, How will insurance work?, What kind of vehicles?, What is Roam Pass?</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">09</div>
+  <div class="section-body">
+    <div class="section-title">Closing strip — full-bleed yellow</div>
+    <p class="section-desc">"ONE LAST TIME: SIGN UP." headline + minimal email field + dark CTA. Last chance to capture an interested visitor before they scroll out.</p>
+  </div>
+</div>
+
+<div class="section-row">
+  <div class="section-num">10</div>
+  <div class="section-body">
+    <div class="section-title">Footer</div>
+    <p class="section-desc">Charcoal background, Roam/Wellington wordmark, hello@ email, copyright.</p>
+  </div>
+</div>
+
+<h2 id="howitworks">5 · "How It Works" — the new section</h2>
+<p>Two-column visual journey. The icons in each column tell the whole story before anyone reads a word. Yellow = renters' path. Mint = hosts' path.</p>
+
+<div class="callout">
+  <div class="label">Section header</div>
+  <p><strong>Eyebrow:</strong> HOW IT WORKS<br>
+  <strong>Headline (Anton, ~72px):</strong> "FIVE STEPS. BOTH WAYS."<br>
+  <strong>Sub:</strong> Renting or hosting — here's the (very short) path.</p>
+</div>
+
+<div class="how-grid">
+  <div class="how-col">
+    <h4>For renters → steering wheel</h4>
+    <div class="how-step"><span class="n">01</span><span class="icon">user-plus</span><div><span class="t">Create your account.</span> <span class="d">Quick sign-up, verified driver, you're in.</span></div></div>
+    <div class="how-step"><span class="n">02</span><span class="icon">car</span><div><span class="t">Pick your ride.</span> <span class="d">Browse cars and campervans from your suburb.</span></div></div>
+    <div class="how-step"><span class="n">03</span><span class="icon">timer</span><div><span class="t">Hours or days.</span> <span class="d">A 3-hour grocery run, or a 10-day campervan saga.</span></div></div>
+    <div class="how-step"><span class="n">04</span><span class="icon">map-pin</span><div><span class="t">Pick up or delivered.</span> <span class="d">Grab it nearby, or have it dropped to your door.</span></div></div>
+    <div class="how-step"><span class="n">05</span><span class="icon">wind</span><div><span class="t">Hit the road.</span> <span class="d">Cover comes with the trip. Just drive.</span></div></div>
+  </div>
+  <div class="how-col hosts">
+    <h4>For hosts → payday</h4>
+    <div class="how-step"><span class="n">01</span><span class="icon">user-plus</span><div><span class="t">Create your account.</span> <span class="d">Quick sign-up, list your vehicle in minutes.</span></div></div>
+    <div class="how-step"><span class="n">02</span><span class="icon">shield-check</span><div><span class="t">Trust survey.</span> <span class="d">A short check so you know your car's in safe hands.</span></div></div>
+    <div class="how-step"><span class="n">03</span><span class="icon">calendar</span><div><span class="t">Set your hours.</span> <span class="d">Choose when your vehicle's available — and when it's not.</span></div></div>
+    <div class="how-step"><span class="n">04</span><span class="icon">bell</span><div><span class="t">Quick accept.</span> <span class="d">Get pinged the moment a booking comes in. Approve in a tap.</span></div></div>
+    <div class="how-step"><span class="n">05</span><span class="icon">wallet</span><div><span class="t">Cash on collect.</span> <span class="d">Paid as soon as the keys hand over.</span></div></div>
+  </div>
+</div>
+
+<p style="font-size:14px;color:var(--text-2);"><strong>Why this works:</strong> No flowchart, no arrows. Just a single color cue (yellow vs mint) telling the brain which path is which, and an icon vocabulary that does the heavy lifting. The 5 icons in each column tell the journey without anyone needing to read.</p>
+
+<h2 id="voice">6 · Copy voice and claim rules</h2>
+<p>The page reads as <strong>confident and exciting</strong>, but every sentence is checked for hidden promises. Founding signups are about <em>access</em> and <em>identity</em>, not concrete service guarantees.</p>
+
+<div class="voice-grid">
+  <div class="voice-card yes">
+    <h4>✓ In scope (intent + identity)</h4>
+    <ul>
+      <li>"Built local, by locals."</li>
+      <li>"Wellington's own peer-to-peer marketplace."</li>
+      <li>"Cover comes with the trip." (intent statement)</li>
+      <li>"Roam Pass is on the way."</li>
+      <li>"Founding members get in first."</li>
+      <li>"Wellington beta is on the way."</li>
+    </ul>
+  </div>
+  <div class="voice-card no">
+    <h4>✗ Out of scope (specific promises)</h4>
+    <ul>
+      <li>Specific fee percentages ("10%")</li>
+      <li>Specific payout timing ("every Tuesday")</li>
+      <li>Specific launch dates ("Q1 2027")</li>
+      <li>Specific waitlist counts ("402 signed up")</li>
+      <li>Insurance terms ("comprehensive cover with $X excess")</li>
+      <li>Service guarantees ("24/7 support", "instant approval")</li>
+    </ul>
+  </div>
+</div>
+
+<h2 id="next">7 · What's next — Phase B: Next.js build</h2>
+<p>Once D5 is locked, the landing page gets built as a real responsive site. Stack:</p>
+<ul>
+  <li><strong>Next.js 14 + Tailwind CSS</strong> — single-page, fully responsive</li>
+  <li><strong>Tally</strong> embedded forms — signups route to a <strong>Google Sheet</strong></li>
+  <li><strong>Vercel</strong> hosting on the free tier</li>
+  <li><strong>Domain</strong> — `.co.nz` to be secured (recommend `roamwellington.co.nz` or `roamnz.co.nz`)</li>
+</ul>
+<p>Component structure (planned):</p>
+<table>
+  <thead><tr><th>Component</th><th>What it does</th></tr></thead>
+  <tbody>
+    <tr><td><code>Nav.tsx</code></td><td>Sticky top nav with logo and CTA</td></tr>
+    <tr><td><code>Hero.tsx</code></td><td>Headline, sub, inline form</td></tr>
+    <tr><td><code>HeroPhoto.tsx</code></td><td>Full-width image strip</td></tr>
+    <tr><td><code>Destinations.tsx</code></td><td>2×2 NZ trip bento</td></tr>
+    <tr><td><code>HowItWorks.tsx</code></td><td>Two-column icon-led journey (Lucide icons)</td></tr>
+    <tr><td><code>WhyRoam.tsx</code></td><td>3 value cards</td></tr>
+    <tr><td><code>BigSignup.tsx</code></td><td>Mid-page dark form section</td></tr>
+    <tr><td><code>FAQ.tsx</code></td><td>Stacked list</td></tr>
+    <tr><td><code>ClosingStrip.tsx</code></td><td>Yellow full-bleed CTA</td></tr>
+    <tr><td><code>Footer.tsx</code></td><td>Footer</td></tr>
+    <tr><td><code>SignupForm.tsx</code></td><td>Shared form (used by Hero + BigSignup) — Tally embed under the hood</td></tr>
+  </tbody>
+</table>
+
+<h2 id="files">8 · Files in this folder</h2>
+<table>
+  <thead><tr><th>Path</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><code>pencil-new.pen</code></td><td>Pencil file with D1–D5 mockups + Palette Sample frame. <strong>Source of design truth.</strong> Open in VS Code with the Pencil extension.</td></tr>
+    <tr><td><code>plan.html</code></td><td>This file. Project plan and reference for what's been decided.</td></tr>
+    <tr><td><em>(future)</em> <code>mocks/</code></td><td>PNG exports of D5 and the Palette Sample, for at-a-glance review without opening Pencil.</td></tr>
+    <tr><td><em>(future)</em> <code>app/</code>, <code>components/</code>, etc.</td><td>Next.js project files, added in Phase B.</td></tr>
+  </tbody>
+</table>
+
+<div class="footer">Roam · Wellington beta · plan.html generated 2026-06-26</div>
+
+</div>
+</body>
+</html>
