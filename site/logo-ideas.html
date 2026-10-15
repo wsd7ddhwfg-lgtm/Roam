@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WheelUp Logo Ideas</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist+Mono:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFBEB; --ink: #18181B; --navy: #111827; --yellow: #FACC15;
+    --muted: #52525B; --border: #E4E4E7;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #F4F4F5; color: var(--ink); font-family: Inter, system-ui, sans-serif; }
+  header { padding: 40px 16px 8px; text-align: center; }
+  h1 { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; font-size: clamp(32px, 6vw, 56px); margin: 0 0 8px; letter-spacing: -.5px; }
+  header p { margin: 0; color: var(--muted); }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; display: grid; gap: 24px; }
+  .idea { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .idea-head { padding: 18px 24px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid var(--border); }
+  .num { font-family: 'Geist Mono', monospace; font-weight: 600; font-size: 13px; letter-spacing: 1.5px; color: #854D0E; }
+  .name { font-family: Anton, Impact, sans-serif; text-transform: uppercase; font-size: 24px; }
+  .desc { color: var(--muted); font-size: 14px; flex-basis: 100%; margin: 0; }
+  .shows { display: grid; grid-template-columns: 1fr 1fr; }
+  .show { padding: 48px 24px; display: flex; align-items: center; justify-content: center; min-height: 200px; }
+  .show.light { background: var(--cream); }
+  .show.dark { background: var(--navy); }
+  .word { font-family: Anton, Impact, sans-serif; text-transform: uppercase; letter-spacing: 1px; line-height: 1; }
+  .lockup { display: flex; align-items: center; gap: 14px; }
+  .light .word { color: var(--ink); }
+  .dark .word { color: var(--yellow); }
+  svg { display: block; flex: 0 0 auto; }
+  @media (max-width: 640px) { .shows { grid-template-columns: 1fr; } .show { min-height: 160px; padding: 36px 16px; } }
+</style>
+</head>
+<body>
+
+<!-- One wheel drawing, reused by every idea. Colours come from CSS vars set on each use. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="wheel">
+      <circle cx="50" cy="50" r="42" fill="none" style="stroke:var(--tyre)" stroke-width="14"/>
+      <circle cx="50" cy="50" r="27" fill="none" style="stroke:var(--rim)" stroke-width="5"/>
+      <g style="stroke:var(--rim)" stroke-width="6" stroke-linecap="round">
+        <line x1="50" y1="50" x2="50" y2="24"/>
+        <line x1="50" y1="50" x2="74.7" y2="42"/>
+        <line x1="50" y1="50" x2="65.3" y2="71"/>
+        <line x1="50" y1="50" x2="34.7" y2="71"/>
+        <line x1="50" y1="50" x2="25.3" y2="42"/>
+      </g>
+      <circle cx="50" cy="50" r="8" style="fill:var(--hub)"/>
+    </g>
+    <g id="wheel-up">
+      <circle cx="50" cy="50" r="42" fill="none" style="stroke:var(--tyre)" stroke-width="14"/>
+      <path d="M50 74 V30 M33 46 L50 28 L67 46" fill="none" style="stroke:var(--rim)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </defs>
+</svg>
+
+<header>
+  <h1>WheelUp logo ideas</h1>
+  <p>Four ways to put a wheel in the logo. Each one is shown on cream and on dark.</p>
+</header>
+
+<main>
+
+  <section class="idea">
+    <div class="idea-head">
+      <span class="num">01</span><span class="name">Wheel + name</span>
+      <p class="desc">A simple wheel sits in front of the name. Clear and easy to read.</p>
+    </div>
+    <div class="shows">
+      <div class="show light"><div class="lockup">
+        <svg width="52" height="52" viewBox="0 0 100 100" style="--tyre:#18181B;--rim:#FACC15;--hub:#18181B"><use href="#wheel"/></svg>
+        <span class="word" style="font-size:48px">WheelUp</span>
+      </div></div>
+      <div class="show dark"><div class="lockup">
+        <svg width="52" height="52" viewBox="0 0 100 100" style="--tyre:#FACC15;--rim:#FFFFFF;--hub:#FACC15"><use href="#wheel"/></svg>
+        <span class="word" style="font-size:48px">WheelUp</span>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="idea">
+    <div class="idea-head">
+      <span class="num">02</span><span class="name">Wheel with an up arrow</span>
+      <p class="desc">"Wheel" + "Up" in one picture: a tyre with an arrow pointing up inside it.</p>
+    </div>
+    <div class="shows">
+      <div class="show light"><div class="lockup">
+        <svg width="52" height="52" viewBox="0 0 100 100" style="--tyre:#18181B;--rim:#FACC15"><use href="#wheel-up"/></svg>
+        <span class="word" style="font-size:48px">WheelUp</span>
+      </div></div>
+      <div class="show dark"><div class="lockup">
+        <svg width="52" height="52" viewBox="0 0 100 100" style="--tyre:#FACC15;--rim:#FFFFFF"><use href="#wheel-up"/></svg>
+        <span class="word" style="font-size:48px">WheelUp</span>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="idea">
+    <div class="idea-head">
+      <span class="num">03</span><span class="name">Wheel in the word</span>
+      <p class="desc">A wheel rolls along at the end of the name.</p>
+    </div>
+    <div class="shows">
+      <div class="show light"><div class="lockup" style="gap:6px">
+        <span class="word" style="font-size:48px">WheelUp</span>
+        <svg width="40" height="40" viewBox="0 0 100 100" style="--tyre:#18181B;--rim:#FACC15;--hub:#18181B;margin-top:4px"><use href="#wheel"/></svg>
+      </div></div>
+      <div class="show dark"><div class="lockup" style="gap:6px">
+        <span class="word" style="font-size:48px">WheelUp</span>
+        <svg width="40" height="40" viewBox="0 0 100 100" style="--tyre:#FACC15;--rim:#FFFFFF;--hub:#FACC15;margin-top:4px"><use href="#wheel"/></svg>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="idea">
+    <div class="idea-head">
+      <span class="num">04</span><span class="name">Round badge</span>
+      <p class="desc">The wheel on its own, in a yellow circle. Great as an app icon or a sticker on cars.</p>
+    </div>
+    <div class="shows">
+      <div class="show light">
+        <svg width="120" height="120" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="60" fill="#FACC15"/>
+          <svg x="20" y="20" width="80" height="80" viewBox="0 0 100 100" style="--tyre:#18181B;--rim:#18181B;--hub:#18181B"><use href="#wheel"/></svg>
+        </svg>
+      </div>
+      <div class="show dark">
+        <svg width="120" height="120" viewBox="0 0 120 120">
+          <circle cx="60" cy="60" r="60" fill="#FACC15"/>
+          <svg x="20" y="20" width="80" height="80" viewBox="0 0 100 100" style="--tyre:#111827;--rim:#111827;--hub:#111827"><use href="#wheel-up"/></svg>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

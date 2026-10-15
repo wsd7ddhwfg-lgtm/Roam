@@ -1,0 +1,32 @@
+/* Bold Kiwi preview — colours from D3 Bold Kiwi in pencil-new.pen */
+:root {
+  --cream:       #111827;
+  --cream-2:     #1F2937;
+  --text:        #F9FAFB;
+  --text-2:      #9CA3AF;
+  --border:      #374151;
+  --accent-2:    #F59E0B;
+  --accent-chip: #FACC15;
+  --white:       #1F2937;
+  --ink:         #111827;
+}
+.nav-logo { color: var(--accent); }
+.nav { background: var(--ink); border-color: var(--border); }
+.chip { background: var(--accent); }
+.chip-dot { background: var(--ink); }
+.chip-label { color: var(--ink); }
+.hero-h, .bigform-h, .footer-city, a.footer-meta:hover { color: #FFFFFF; }
+.hero-top::after { background: linear-gradient(180deg, rgba(17,24,39,.7) 0%, rgba(17,24,39,.6) 55%, rgba(17,24,39,1) 100%); }
+.form-card.hero-form { box-shadow: 0 18px 48px rgba(0,0,0,.45); }
+.btn-accent { color: var(--ink); }
+.btn-dark { background: var(--ink); color: var(--accent); }
+.input { color: #F9FAFB; background: #111827; }
+.input:focus { border-color: var(--accent); }
+.bigform { background: #0B0F19; }
+.footer { background: #0B0F19; }
+.step-hero .step-num, .step-hero.renter *, .step-hero.host * { color: var(--ink); }
+/* Yellow closing strip keeps dark text */
+.close, .close-h, .close-sub, .close-micro,
+.close .form-done .display, .close .form-done p { color: var(--ink); }
+.close-input { background: #FFFFFF; color: var(--ink); }
+.close-input::placeholder { color: #6B7280; }

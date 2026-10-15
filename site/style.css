@@ -151,6 +151,41 @@ button { font: inherit; cursor: pointer; }
   text-transform: uppercase;
 }
 
+/* Leaning wordmark with speed lines streaking off the back.
+   The lines whoosh three times on load, then rest; hover sets them going again. */
+.logo-speed {
+  --speed: var(--accent);
+  position: relative;
+  display: inline-block;
+  padding-left: 1.5em;
+  transform: skewX(-12deg);
+}
+.logo-speed::before,
+.logo-speed::after,
+.logo-speed .speed-mid {
+  content: '';
+  position: absolute;
+  right: calc(100% - 1.5em + .25em);
+  height: .12em;
+  border-radius: .06em;
+  background: var(--speed);
+  transform-origin: right center;
+  animation: speed-streak .7s ease-out 3 both;
+}
+.logo-speed::before   { top: 24%; width: .8em; }
+.logo-speed .speed-mid { top: 47%; width: 1.15em; animation-delay: .1s; }
+.logo-speed::after    { top: 70%; width: .55em; animation-delay: .2s; }
+.logo-speed:hover::before,
+.logo-speed:hover::after,
+.logo-speed:hover .speed-mid { animation-iteration-count: infinite; }
+@keyframes speed-streak {
+  from { transform: translateX(.5em) scaleX(.2); opacity: 0; }
+  to   { transform: translateX(0) scaleX(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-speed::before, .logo-speed::after, .logo-speed .speed-mid { animation: none; }
+}
+
 .nav-right { display: flex; align-items: center; gap: 32px; }
 
 .nav-link {
@@ -201,9 +236,38 @@ button { font: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-  padding: 80px var(--pad-x) 72px;
+  padding: 0 var(--pad-x) 72px;
   text-align: center;
+}
+
+/* Full-bleed photo band; the sign-up card overlaps its bottom edge */
+.hero-top {
+  position: relative;
+  isolation: isolate;
+  align-self: stretch;
+  margin: 0 calc(-1 * var(--pad-x));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 96px var(--pad-x) 168px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+/* Darkens the photo so the white headline stays readable */
+.hero-top::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(24, 24, 27, .62) 0%, rgba(24, 24, 27, .56) 55%, rgba(24, 24, 27, .7) 100%);
 }
 
 .chip {
@@ -230,8 +294,11 @@ button { font: inherit; cursor: pointer; }
 }
 
 .hero-h {
+  color: var(--white);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, .25);
   font-size: clamp(40px, 7.5vw, 108px);
   letter-spacing: -1.8px;
+  text-wrap: balance;
   line-height: .96;
   max-width: var(--w-wide);
 }
@@ -239,16 +306,11 @@ button { font: inherit; cursor: pointer; }
 .hero-sub {
   font-size: 18px;
   line-height: 1.55;
-  color: var(--text-2);
+  color: rgba(255, 255, 255, .92);
   max-width: 680px;
   margin: 0;
 }
 
-.hero-photo {
-  width: 100%;
-  height: clamp(260px, 33vw, 480px);
-  object-fit: cover;
-}
 
 /* --------------------------------------------------------------------------
    Forms
@@ -265,7 +327,12 @@ button { font: inherit; cursor: pointer; }
   gap: 22px;
   text-align: left;
 }
-.form-card.hero-form { max-width: var(--w-form); }
+.form-card.hero-form {
+  position: relative;
+  max-width: var(--w-form);
+  margin-top: -112px;
+  box-shadow: 0 18px 48px rgba(24, 24, 27, .18);
+}
 .form-card.big-form  { max-width: var(--w-card); padding: 32px; border-color: transparent; }
 
 .form-label {
@@ -367,10 +434,12 @@ textarea.input { resize: vertical; min-height: 84px; line-height: 1.5; }
    Destinations
    -------------------------------------------------------------------------- */
 
+/* Sized to the column so the four words always sit on one line */
 .dest-h {
-  font-size: clamp(34px, 6.111vw, 88px);
-  letter-spacing: -1.5px;
+  font-size: min(76px, calc((100vw - 2 * var(--pad-x)) / 15));
+  letter-spacing: -1px;
   line-height: .96;
+  white-space: nowrap;
 }
 
 .grid-2 {
@@ -682,7 +751,7 @@ textarea.input { resize: vertical; min-height: 84px; line-height: 1.5; }
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.footer-mark { color: var(--accent); }
+.footer-mark { color: var(--accent); --speed: #FFFFFF; }
 .footer-city { color: var(--white); }
 
 .footer-right { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
@@ -721,7 +790,9 @@ a.footer-meta:hover { color: var(--white); }
 }
 
 @media (max-width: 560px) {
-  .hero        { padding-top: 56px; padding-bottom: 48px; gap: 24px; }
+  .hero        { padding-bottom: 48px; }
+  .hero-top    { padding-top: 56px; padding-bottom: 120px; gap: 20px; }
+  .form-card.hero-form { margin-top: -80px; }
   .form-card,
   .form-card.big-form { padding: 20px; }
   .card-body   { padding: 20px; }

@@ -1,5 +1,5 @@
 {
-  "version": "2.14",
+  "version": "2.21",
   "children": [
     {
       "type": "frame",
@@ -36,7 +36,7 @@
                   "id": "dXQPE",
                   "name": "Logo",
                   "fill": "$adv-text",
-                  "content": "Roam",
+                  "content": "WheelUp",
                   "fontFamily": "Playfair Display",
                   "fontSize": 24,
                   "fontWeight": "normal",
@@ -260,7 +260,7 @@
             "type": "image",
             "enabled": true,
             "url": "https://images.unsplash.com/photo-1778640405944-3de95ae82009?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzExMzF8&ixlib=rb-4.1.0&q=80&w=1080",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 1440,
           "height": 560
@@ -366,7 +366,7 @@
                       "id": "qkk46",
                       "name": "Roam WellingtonCap",
                       "fill": "$adv-accent-2",
-                      "content": "ROAM WELLINGTON · 10% fee",
+                      "content": "WHEELUP WELLINGTON · 10% fee",
                       "fontFamily": "Geist Mono",
                       "fontSize": 12,
                       "fontWeight": "normal",
@@ -633,7 +633,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "https://images.unsplash.com/photo-1562390467-83a821da67da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzExODl8&ixlib=rb-4.1.0&q=80&w=1080",
-                        "mode": "fill"
+                        "mode": "cover"
                       },
                       "width": "fill_container",
                       "height": 200
@@ -739,7 +739,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "https://images.unsplash.com/photo-1759833116929-6d06bf8ee16a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzExOTB8&ixlib=rb-4.1.0&q=80&w=1080",
-                        "mode": "fill"
+                        "mode": "cover"
                       },
                       "width": "fill_container",
                       "height": 200
@@ -845,7 +845,7 @@
                         "type": "image",
                         "enabled": true,
                         "url": "https://images.unsplash.com/photo-1779960595035-c4b2ca1b850e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzExOTF8&ixlib=rb-4.1.0&q=80&w=1080",
-                        "mode": "fill"
+                        "mode": "cover"
                       },
                       "width": "fill_container",
                       "height": 200
@@ -2595,7 +2595,7 @@
                   "id": "Njprd",
                   "name": "FootLogo",
                   "fill": "$adv-text",
-                  "content": "Roam Wellington.",
+                  "content": "WheelUp Wellington.",
                   "fontFamily": "Playfair Display",
                   "fontSize": 18,
                   "fontWeight": "normal",
@@ -2638,6 +2638,7 @@
           "strokeWidth": {
             "bottom": 1
           },
+          "strokeLinejoin": "round",
           "padding": [
             20,
             80
@@ -2657,7 +2658,7 @@
                   "id": "xHZSh",
                   "name": "Logo",
                   "fill": "$mod-text",
-                  "content": "Roam",
+                  "content": "WheelUp",
                   "fontFamily": "Inter",
                   "fontSize": 20,
                   "fontWeight": "700"
@@ -2946,7 +2947,7 @@
                 "type": "image",
                 "enabled": true,
                 "url": "https://images.unsplash.com/photo-1778834949555-f4df2b919068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzEzNDJ8&ixlib=rb-4.1.0&q=80&w=1080",
-                "mode": "fill"
+                "mode": "cover"
               },
               "width": 1100,
               "height": 540
@@ -3158,7 +3159,7 @@
                           "id": "CDlIW",
                           "name": "RoamBrand",
                           "fill": "$mod-text-inverse",
-                          "content": "Roam Wellington",
+                          "content": "WheelUp Wellington",
                           "fontFamily": "Inter",
                           "fontSize": 18,
                           "fontWeight": "700"
@@ -3560,7 +3561,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1778640413176-28efe28d49f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzE0MTV8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -3677,7 +3678,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1760681555895-0d3879627654?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzE0MTZ8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -3803,7 +3804,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1778640413294-81ab917e6e2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzE0MTZ8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -3920,7 +3921,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1617777094399-8e7d1d1e0faf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzE0MTd8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -5590,7 +5591,7 @@
                           "id": "zcyDG",
                           "name": "FLogoR",
                           "fill": "$mod-text-inverse",
-                          "content": "Roam",
+                          "content": "WheelUp",
                           "fontFamily": "Inter",
                           "fontSize": 20,
                           "fontWeight": "700"
@@ -5834,6 +5835,7 @@
               "strokeWidth": {
                 "top": 1
               },
+              "strokeLinejoin": "round",
               "padding": [
                 24,
                 0,
@@ -5848,7 +5850,7 @@
                   "id": "ANPDu",
                   "name": "FCopy",
                   "fill": "#888888",
-                  "content": "© 2026 Roam Wellington Ltd.",
+                  "content": "© 2026 WheelUp Wellington Ltd.",
                   "fontFamily": "Inter",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -5905,7 +5907,7 @@
                   "id": "GoB83",
                   "name": "Logo",
                   "fill": "$kiwi-accent",
-                  "content": "ROAM/",
+                  "content": "WHEELUP/",
                   "fontFamily": "Anton",
                   "fontSize": 30,
                   "fontWeight": "normal",
@@ -6173,6 +6175,7 @@
           "strokeWidth": {
             "top": 1
           },
+          "strokeLinejoin": "round",
           "padding": [
             60,
             80,
@@ -7130,7 +7133,7 @@
                       "id": "nWWw6",
                       "name": "ImpStCap1",
                       "fill": "$kiwi-inverse",
-                      "content": "WITH ROAM",
+                      "content": "WITH WHEELUP",
                       "fontFamily": "Geist Mono",
                       "fontSize": 12,
                       "fontWeight": "600",
@@ -8546,7 +8549,7 @@
                           "id": "A2JpvF",
                           "name": "FLogoR",
                           "fill": "$kiwi-accent",
-                          "content": "ROAM/",
+                          "content": "WHEELUP/",
                           "fontFamily": "Anton",
                           "fontSize": 30,
                           "fontWeight": "normal",
@@ -8783,6 +8786,7 @@
               "strokeWidth": {
                 "top": 1
               },
+              "strokeLinejoin": "round",
               "padding": [
                 20,
                 0,
@@ -8797,7 +8801,7 @@
                   "id": "B8wUX",
                   "name": "FCopy",
                   "fill": "$kiwi-text-muted",
-                  "content": "© 2026 ROAM WELLINGTON LTD.",
+                  "content": "© 2026 WHEELUP WELLINGTON LTD.",
                   "fontFamily": "Geist Mono",
                   "fontSize": 11,
                   "fontWeight": "600",
@@ -8856,7 +8860,7 @@
                   "id": "oyy5b",
                   "name": "Logo",
                   "fill": "$kiwi-accent",
-                  "content": "ROAM/",
+                  "content": "WHEELUP/",
                   "fontFamily": "Anton",
                   "fontSize": 28,
                   "fontWeight": "normal",
@@ -9316,7 +9320,7 @@
             "type": "image",
             "enabled": true,
             "url": "https://images.unsplash.com/photo-1776142519128-ccba03c519e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzIwMDJ8&ixlib=rb-4.1.0&q=80&w=1080",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 1440,
           "height": 520
@@ -9450,7 +9454,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1629260981369-4a83ecb4137f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzIwMDR8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 240
@@ -9558,7 +9562,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1632653859931-5c2dd00f60c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzIwMDR8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 240
@@ -9675,7 +9679,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1578406849741-e0ed9686fcbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzIwMDV8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 240
@@ -9783,7 +9787,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1648716181153-f09e0ebc8895?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzIwMDZ8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 240
@@ -11363,7 +11367,7 @@
                   "id": "XVK8v",
                   "name": "FootLogo",
                   "fill": "$kiwi-accent",
-                  "content": "ROAM/",
+                  "content": "WHEELUP/",
                   "fontFamily": "Anton",
                   "fontSize": 24,
                   "fontWeight": "normal",
@@ -11394,7 +11398,7 @@
                   "id": "CY2v9",
                   "name": "FootMail",
                   "fill": "$kiwi-text-muted",
-                  "content": "hello@roamwellington.co.nz",
+                  "content": "wheelupnz@gmail.com",
                   "fontFamily": "Geist Mono",
                   "fontSize": 12,
                   "fontWeight": "600",
@@ -11954,10 +11958,11 @@
                       "fill": "$roam-text",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Roam is a peer-to-peer way to rent cars and campervans from your neighbours. We're exploring it — tell us what you'd want.",
+                      "content": "WheelUp is a peer-to-peer way to rent cars and campervans from your neighbours. We're exploring it — tell us what you'd want.",
                       "lineHeight": 1.55,
                       "fontFamily": "Inter",
-                      "fontSize": 17
+                      "fontSize": 17,
+                      "fontWeight": "normal"
                     }
                   ]
                 }
@@ -12132,7 +12137,7 @@
                       "fill": "$roam-text-2",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Roam is a peer-to-peer way to rent cars and campervans from your neighbours. Tell us what you'd want.",
+                      "content": "WheelUp is a peer-to-peer way to rent cars and campervans from your neighbours. Tell us what you'd want.",
                       "lineHeight": 1.55,
                       "textAlign": "center",
                       "fontFamily": "Inter",
@@ -12227,6 +12232,7 @@
           "strokeWidth": {
             "bottom": 1
           },
+          "strokeLinejoin": "round",
           "padding": [
             24,
             80
@@ -12246,7 +12252,7 @@
                   "id": "K6L2DL",
                   "name": "D5Logo",
                   "fill": "$roam-text",
-                  "content": "ROAM/",
+                  "content": "WHEELUP/",
                   "fontFamily": "Anton",
                   "fontSize": 28,
                   "fontWeight": "normal",
@@ -12568,7 +12574,7 @@
                           "id": "MRyUH",
                           "name": "D5CbLbl2",
                           "fill": "$roam-text",
-                          "content": "Hearing about Roam Pass when it's ready",
+                          "content": "Hearing about WheelUp Pass when it's ready",
                           "fontFamily": "Inter",
                           "fontSize": 15,
                           "fontWeight": "normal"
@@ -12725,7 +12731,7 @@
             "type": "image",
             "enabled": true,
             "url": "https://images.unsplash.com/photo-1765341068674-8f21ffaefbf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MDd8&ixlib=rb-4.1.0&q=80&w=1080",
-            "mode": "fill"
+            "mode": "cover"
           },
           "width": 1440,
           "height": 480
@@ -12859,7 +12865,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1721467990566-7fa58209c319?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MDh8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -12967,7 +12973,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1660508477980-ac5307fe39dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MDl8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -13084,7 +13090,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1516509293217-e856dcfb86a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MTB8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -13192,7 +13198,7 @@
                             "type": "image",
                             "enabled": true,
                             "url": "https://images.unsplash.com/photo-1648716181138-8af016b80f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MTB8&ixlib=rb-4.1.0&q=80&w=1080",
-                            "mode": "fill"
+                            "mode": "cover"
                           },
                           "width": "fill_container",
                           "height": 220
@@ -14807,7 +14813,7 @@
                   "id": "B4ONM2",
                   "name": "D5ExpTag",
                   "fill": "$roam-accent-chip",
-                  "content": "WHY ROAM",
+                  "content": "WHY WHEELUP",
                   "fontFamily": "Geist Mono",
                   "fontSize": 13,
                   "fontWeight": "600",
@@ -14848,7 +14854,7 @@
                       "fill": "$roam-text-2",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "What makes Roam different — and why founding members are getting in now.",
+                      "content": "What makes WheelUp different — and why founding members are getting in now.",
                       "lineHeight": 1.55,
                       "fontFamily": "Inter",
                       "fontSize": 17,
@@ -14934,7 +14940,7 @@
                           "fill": "$roam-text-2",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "Not a corporate marketplace launching its next city. Roam is built in Wellington, by people who want to rent and host here too.",
+                          "content": "Not a corporate marketplace launching its next city. WheelUp is built in Wellington, by people who want to rent and host here too.",
                           "lineHeight": 1.55,
                           "fontFamily": "Inter",
                           "fontSize": 14,
@@ -15106,7 +15112,7 @@
                           "fill": "$roam-text",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "Roam Pass is on the way.",
+                          "content": "WheelUp Pass is on the way.",
                           "lineHeight": 1.1,
                           "fontFamily": "Anton",
                           "fontSize": 28,
@@ -15128,7 +15134,7 @@
                           "fill": "$roam-text-2",
                           "textGrowth": "fixed-width",
                           "width": "fill_container",
-                          "content": "A members' perk for the people who use Roam most. Premium vehicle access, host bonuses, member events. Tick the box on the form to be first to hear.",
+                          "content": "A members' perk for the people who use WheelUp most. Premium vehicle access, host bonuses, member events. Tick the box on the form to be first to hear.",
                           "lineHeight": 1.55,
                           "fontFamily": "Inter",
                           "fontSize": 14,
@@ -15232,7 +15238,7 @@
                       "fill": "#CCCCCC",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "Get in before Roam goes live in Wellington. Founding signups get first access, hear first, and roll with us from day one.",
+                      "content": "Get in before WheelUp goes live in Wellington. Founding signups get first access, hear first, and roll with us from day one.",
                       "lineHeight": 1.55,
                       "textAlign": "center",
                       "fontFamily": "Inter",
@@ -15369,7 +15375,7 @@
                           "id": "vDoBJ",
                           "name": "D5BigCbLbl2",
                           "fill": "$roam-text",
-                          "content": "Hearing about Roam Pass when it's ready",
+                          "content": "Hearing about WheelUp Pass when it's ready",
                           "fontFamily": "Inter",
                           "fontSize": 15,
                           "fontWeight": "normal"
@@ -15898,7 +15904,7 @@
                               "fill": "$roam-text-2",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "Every Roam trip will come with cover — we're working with NZ insurers to nail the details. Sign up and we'll keep you posted as it shapes up.",
+                              "content": "Every WheelUp trip will come with cover — we're working with NZ insurers to nail the details. Sign up and we'll keep you posted as it shapes up.",
                               "lineHeight": 1.6,
                               "fontFamily": "Inter",
                               "fontSize": 16,
@@ -16044,7 +16050,7 @@
                               "fill": "$roam-text",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "WHAT IS ROAM PASS?",
+                              "content": "WHAT IS WHEELUP PASS?",
                               "lineHeight": 1.1,
                               "fontFamily": "Anton",
                               "fontSize": 32,
@@ -16066,7 +16072,7 @@
                               "fill": "$roam-text-2",
                               "textGrowth": "fixed-width",
                               "width": "fill_container",
-                              "content": "A paid perk for the people who use Roam most — extras like premium vehicle access, host bonuses, and member events. Tick the box on the form for first access.",
+                              "content": "A paid perk for the people who use WheelUp most — extras like premium vehicle access, host bonuses, and member events. Tick the box on the form for first access.",
                               "lineHeight": 1.6,
                               "fontFamily": "Inter",
                               "fontSize": 16,
@@ -16261,7 +16267,7 @@
                   "id": "oh87g",
                   "name": "D5FootLogo",
                   "fill": "$roam-accent",
-                  "content": "ROAM/",
+                  "content": "WHEELUP/",
                   "fontFamily": "Anton",
                   "fontSize": 24,
                   "fontWeight": "normal",
@@ -16292,7 +16298,7 @@
                   "id": "lzExd",
                   "name": "D5FootMail",
                   "fill": "#999999",
-                  "content": "hello@roam.co.nz",
+                  "content": "wheelupnz@gmail.com",
                   "fontFamily": "Geist Mono",
                   "fontSize": 12,
                   "fontWeight": "600",

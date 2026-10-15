@@ -1,4 +1,4 @@
-# Roam — landing page
+# WheelUp — landing page
 
 Static build of **D5 Citrus Pop** from `../pencil-new.pen`. No build step, no dependencies.
 
@@ -6,8 +6,8 @@ Static build of **D5 Citrus Pop** from `../pencil-new.pen`. No build step, no de
 site/
   index.html        the page
   style.css         Citrus Pop design system + responsive rules
-  app.js            form handling  ← put your Sheet URL here
-  apps-script.gs    paste this into Google Apps Script
+  app.js                 form handling  ← paste your Google Form settings here
+  google-form-setup.gs   creates the Google Form + welcome email
   README.md         this file
 ```
 
@@ -15,56 +15,40 @@ Open `index.html` in any browser to view it.
 
 ---
 
-## Connecting the forms to a Google Sheet
+## Connecting the forms to Google Forms
 
-All three forms (hero, mid-page, closing strip) post to one endpoint. Takes about five minutes.
+All three forms (hero, mid-page, closing strip) send to one Google Form, and every new sign-up gets a welcome email from wheelupnz@gmail.com.
 
-**1. Make the sheet**
-Create a new Google Sheet. Rename the first tab to exactly `Signups`. Leave it empty — the header row writes itself on the first submission.
+**1. Run the setup script**
+Signed in as **wheelupnz@gmail.com**, go to [script.google.com](https://script.google.com) → **New project**. Delete the placeholder code, paste in everything from `google-form-setup.gs`, and save. Pick `setup` in the function dropdown and click **Run**. Approve the permissions prompt (it's your own script, so the "unverified app" warning is expected — choose Advanced → Go to project).
 
-**2. Add the script**
-In that sheet: **Extensions → Apps Script**. Delete the placeholder `myFunction` code, paste in everything from `apps-script.gs`, and save.
+**2. Copy the settings**
+The Execution log prints a line starting with `{"action":`. Copy that whole line.
 
-**3. Deploy it**
-**Deploy → New deployment → ** gear icon → **Web app**. Set:
-
-| Field | Value |
-|---|---|
-| Execute as | **Me** |
-| Who has access | **Anyone** |
-
-Click **Deploy** and approve the permissions prompt (it's your own script, so the "unverified app" warning is expected — choose Advanced → Go to project).
-
-Copy the **Web app URL**. It ends in `/exec`.
-
-**4. Wire it up**
-Open `app.js` and paste the URL into the first line:
+**3. Wire it up**
+Paste it into `app.js`:
 
 ```js
-const SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycb.../exec';
+const GOOGLE_FORM = {"action":"https://docs.google.com/forms/d/e/.../formResponse","fields":{...}};
 ```
 
-That's it. Submit the form and a row appears in the sheet.
+Submit a form on the site: the answers show in the Google Form's **Responses** tab and the welcome email arrives a few seconds later.
 
-> **"Who has access" must be Anyone.** With *Anyone with a Google account*, visitors who aren't logged in get a silent failure.
+### What lands in the form
 
-### What lands in the sheet
-
-| Column | Notes |
+| Question | Notes |
 |---|---|
-| `submitted_at` | ISO timestamp from the visitor's browser |
-| `source` | `hero`, `big`, or `closing` — tells you which form converted |
-| `name`, `email` | `email` is required, `name` isn't |
-| `interests` | The ticked boxes, comma-joined |
-| `wants_renting` / `wants_hosting` / `wants_pass` | `yes`/`no` columns, so you can chart demand without parsing text |
-| `message` | Only from the mid-page form |
-| `page` | Full URL, useful once you're running campaign links |
+| Name, Email | Email is required, name isn't |
+| Interested in | The ticked boxes, comma-joined. Count rows containing "WheelUp Pass" for Pass demand |
+| Message | Only from the mid-page form |
+| Signed up from | `hero`, `big`, or `closing` — tells you which form converted |
+| Page | Full URL, useful once you're running campaign links |
 
-`wants_pass` is the Roam Pass demand signal the plan is built around — the share of `yes` against total rows is the number to watch.
+To see responses as a spreadsheet, open the form's **Responses** tab → **Link to Sheets**.
 
-### Re-deploying after script edits
+### Changing the welcome email
 
-Apps Script pins each deployment to a version. If you edit `apps-script.gs` later, go **Deploy → Manage deployments → ** pencil icon → set Version to **New version** → **Deploy**. The URL stays the same. Creating a *new* deployment instead gives you a new URL and you'd have to update `app.js`.
+Edit the text in `sendWelcome` in the script project and save. No redeploy needed. Free Gmail accounts can send about 100 emails a day.
 
 ---
 

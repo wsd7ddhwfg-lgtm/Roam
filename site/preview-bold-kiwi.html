@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WheelUp — Wellington's peer-to-peer vehicle rental marketplace</title>
+<meta name="description" content="Wellington's own peer-to-peer marketplace for cars and campervans. Built local, by locals — sign up for early access.">
+
+<meta property="og:title" content="WheelUp — Wellington's peer-to-peer vehicle rental marketplace">
+<meta property="og:description" content="Rent a car or campervan from a local, or earn from the one sitting in your driveway. Founding signups get in first.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NZ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;600;700&family=Geist+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bold-kiwi.css">
+</head>
+<body>
+
+<!-- Lucide icon sprite (inlined so the page has no script/CDN dependency for icons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="lucide-base" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="i-user-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/>
+  </symbol>
+  <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/>
+  </symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/>
+  </symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+  </symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>
+  </symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+  </symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+  </symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>
+  </symbol>
+</svg>
+
+<!-- ========================= NAV ========================= -->
+<header class="nav">
+  <a class="nav-logo logo-speed" href="#top"><i class="speed-mid" aria-hidden="true"></i>WheelUp</a>
+  <nav class="nav-right" aria-label="Main">
+    <a class="nav-link" href="#how">What it is</a>
+    <a class="nav-link" href="#destinations">Ways to use it</a>
+    <a class="nav-link" href="#faq">Open questions</a>
+    <a class="btn btn-accent btn-sm" href="#signup">Get early access</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ========================= HERO ========================= -->
+  <section class="hero">
+    <div class="hero-top">
+      <img class="hero-bg"
+           src="https://images.unsplash.com/photo-1788813197059-e531afbe4ab2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000"
+           alt="Cars of every kind on the motorway into central Wellington, with green hills and city towers behind"
+           width="1440" height="960" fetchpriority="high">
+
+      <div class="chip">
+        <span class="chip-dot" aria-hidden="true"></span>
+        <span class="chip-label">Wellington · Now boarding</span>
+      </div>
+
+      <h1 class="display hero-h">Your car, your rules,<br> your weekend.</h1>
+
+      <p class="hero-sub">Rent a car or campervan from someone in your neighbourhood, or earn money from yours. Made in Wellington, by locals — get in before everyone else.</p>
+    </div>
+
+    <form class="form-card hero-form" data-roam-form data-source="hero">
+      <p class="form-label" id="hero-interest-label">I'm interested in…</p>
+
+      <div class="cb-list" role="group" aria-labelledby="hero-interest-label">
+        <label class="cb"><input type="checkbox" name="interest" value="Renting a vehicle"> Renting a vehicle</label>
+        <label class="cb"><input type="checkbox" name="interest" value="Listing my vehicle"> Listing my vehicle</label>
+        <label class="cb"><input type="checkbox" name="interest" value="E-bikes, scooters or trailers"> Renting e-bikes, scooters or trailers</label>
+        <label class="cb"><input type="checkbox" name="interest" value="WheelUp Pass"> Hearing about WheelUp Pass when it's ready</label>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label class="sr-only" for="hero-name">Your name</label>
+          <input class="input" id="hero-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label class="sr-only" for="hero-email">Your email</label>
+          <input class="input" id="hero-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+
+      <button class="btn btn-accent btn-block" type="submit">Get early access →</button>
+      <p class="micro">We'll email when we open. No spam. No selling your details.</p>
+    </form>
+  </section>
+
+  <!-- ========================= DESTINATIONS ========================= -->
+  <section class="section" id="destinations">
+    <div class="head wrap">
+      <p class="tag">Ways to use it</p>
+      <h2 class="display dest-h">Holidays. Work. Road trips. Everyday.</h2>
+      <p class="lede">Whatever gets you behind the wheel, there's a local with the right vehicle.</p>
+    </div>
+
+    <div class="wrap grid-2">
+      <article class="card">
+        <img class="card-img" loading="lazy" style="object-position: center 40%"
+             src="https://images.unsplash.com/photo-1756142008330-87dc106322a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="Kids waving from the windows of a big family SUV" width="540" height="220">
+        <div class="card-body">
+          <p class="card-tag">Holidays</p>
+          <h3 class="display card-title">Need a bigger car?</h3>
+          <p class="card-desc">Off on holiday with the whole family or a group of mates? Rent a bigger car, SUV or people-mover from someone nearby.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" loading="lazy"
+             src="https://images.unsplash.com/photo-1521014710171-f44dfe788ece?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="A campervan parked by the beach at sunset" width="540" height="220">
+        <div class="card-body">
+          <p class="card-tag">Road trips</p>
+          <h3 class="display card-title">Campervan getaway</h3>
+          <p class="card-desc">Pack up and go. Coast, mountains, hidden bays — and sleep wherever the road takes you.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" loading="lazy" style="object-position: center 70%"
+             src="https://images.unsplash.com/photo-1788813196707-f5b57dfe10ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="Cars on the street outside the Beehive in Wellington" width="540" height="220">
+        <div class="card-body">
+          <p class="card-tag">Work &amp; new in town</p>
+          <h3 class="display card-title">In Wellington for work?</h3>
+          <p class="card-desc">Here for a conference, a business trip, or just moved to town? Get a car from a local for as long as you need it.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="card-img" loading="lazy" style="object-position: center 60%"
+             src="https://images.unsplash.com/photo-1788813196652-34e07826988a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="Everyday traffic on a Wellington city street" width="540" height="220">
+        <div class="card-body">
+          <p class="card-tag">Everyday</p>
+          <h3 class="display card-title">Need a second car?</h3>
+          <p class="card-desc">One car not enough this week? Rent another by the day or the week — or while yours is in the shop.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================= HOW IT WORKS ========================= -->
+  <section class="section how" id="how">
+    <div class="head center">
+      <p class="tag">How it works</p>
+      <h2 class="display how-h">Five steps. Both ways.</h2>
+      <p class="lede">Renting or hosting — here's the (very short) path.</p>
+    </div>
+
+    <div class="how-cols">
+      <!-- Renters -->
+      <div class="how-col">
+        <div class="how-col-head">
+          <p class="tag" style="font-size:12px">For renters</p>
+          <h3 class="display how-col-h">From sign-up to steering wheel.</h3>
+        </div>
+
+        <article class="step">
+          <div class="step-hero renter">
+            <p class="step-num">Step 01</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-user-plus"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Create your account</h4>
+            <p class="step-desc">Quick sign-up, verified driver, you're in.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero renter">
+            <p class="step-num">Step 02</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-car"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Pick your ride</h4>
+            <p class="step-desc">Browse cars and campervans from your suburb.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero renter">
+            <p class="step-num">Step 03</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-timer"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Hours or days</h4>
+            <p class="step-desc">A 3-hour grocery run, or a 10-day campervan saga.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero renter">
+            <p class="step-num">Step 04</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-map-pin"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Pick up or delivered</h4>
+            <p class="step-desc">Grab it nearby, or have it dropped to your door.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero renter">
+            <p class="step-num">Step 05</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-wind"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Hit the road</h4>
+            <p class="step-desc">Cover comes with the trip. Just drive.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Hosts -->
+      <div class="how-col">
+        <div class="how-col-head">
+          <p class="tag" style="font-size:12px">For hosts</p>
+          <h3 class="display how-col-h">From sign-up to payday.</h3>
+        </div>
+
+        <article class="step">
+          <div class="step-hero host">
+            <p class="step-num">Step 01</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-user-plus"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Create your account</h4>
+            <p class="step-desc">Quick sign-up, list your vehicle in minutes.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero host">
+            <p class="step-num">Step 02</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-shield-check"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Trust survey</h4>
+            <p class="step-desc">A short check so you know your car's in safe hands.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero host">
+            <p class="step-num">Step 03</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-calendar"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Set your hours</h4>
+            <p class="step-desc">Choose when your vehicle's available — and when it's not.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero host">
+            <p class="step-num">Step 04</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-bell"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Quick accept</h4>
+            <p class="step-desc">Get pinged the moment a booking comes in. Approve in a tap.</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <div class="step-hero host">
+            <p class="step-num">Step 05</p>
+            <div class="step-circle"><svg aria-hidden="true"><use href="#i-wallet"/></svg></div>
+          </div>
+          <div class="step-body">
+            <h4 class="display step-title">Cash on collect</h4>
+            <p class="step-desc">Paid as soon as the keys hand over.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= WHY ROAM ========================= -->
+  <section class="section why" id="why">
+    <div class="head wrap">
+      <p class="tag">Why WheelUp</p>
+      <h2 class="display why-h">Built local. Built to last.</h2>
+      <p class="lede">What makes WheelUp different — and why founding members are getting in now.</p>
+    </div>
+
+    <div class="wrap grid-3">
+      <article class="why-card">
+        <p class="card-tag">Wellington's own</p>
+        <h3 class="display why-title">Built locally, by locals.</h3>
+        <p class="why-desc">Not a corporate marketplace launching its next city. WheelUp is built in Wellington, by people who want to rent and host here too.</p>
+        <hr class="why-rule">
+        <a class="why-link" href="#signup">Get in early — sign up below →</a>
+      </article>
+
+      <article class="why-card">
+        <p class="card-tag">Cars + campers</p>
+        <h3 class="display why-title">From weekend wagon to summer saga.</h3>
+        <p class="why-desc">Daily drivers, weekend SUVs, ski wagons, full-on campervans. Real variety, real owners, real local trips.</p>
+        <hr class="why-rule">
+        <a class="why-link" href="#signup">Get in early — sign up below →</a>
+      </article>
+
+      <article class="why-card">
+        <p class="card-tag">Pass coming</p>
+        <h3 class="display why-title">WheelUp Pass is on the way.</h3>
+        <p class="why-desc">A members' perk for the people who use WheelUp most. Premium vehicle access, host bonuses, member events. Tick the box on the form to be first to hear.</p>
+        <hr class="why-rule">
+        <a class="why-link" href="#signup">Tick the Pass box on the form →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========================= BIG SIGN-UP ========================= -->
+  <section class="section bigform" id="signup">
+    <div class="head">
+      <p class="tag">Tell us you're interested</p>
+      <h2 class="display bigform-h">Join the founding wave.</h2>
+      <p class="bigform-sub">Get in before WheelUp goes live in Wellington. Founding signups get first access, hear first, and roll with us from day one.</p>
+    </div>
+
+    <form class="form-card big-form" data-roam-form data-source="big">
+      <p class="form-label" id="big-interest-label">I'm interested in…</p>
+
+      <div class="cb-list" role="group" aria-labelledby="big-interest-label">
+        <label class="cb"><input type="checkbox" name="interest" value="Renting a vehicle"> Renting a vehicle</label>
+        <label class="cb"><input type="checkbox" name="interest" value="Listing my vehicle"> Listing my vehicle</label>
+        <label class="cb"><input type="checkbox" name="interest" value="E-bikes, scooters or trailers"> Renting e-bikes, scooters or trailers</label>
+        <label class="cb"><input type="checkbox" name="interest" value="WheelUp Pass"> Hearing about WheelUp Pass when it's ready</label>
+      </div>
+
+      <div class="field">
+        <label class="form-label" for="big-name">Name</label>
+        <input class="input" id="big-name" name="name" type="text" autocomplete="name" placeholder="Your name">
+      </div>
+
+      <div class="field">
+        <label class="form-label" for="big-email">Email</label>
+        <input class="input" id="big-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="field">
+        <label class="form-label" for="big-message">What's on your mind (optional)</label>
+        <textarea class="input" id="big-message" name="message" rows="3" placeholder="Vehicle you'd list, trip you'd take, question you have — anything"></textarea>
+      </div>
+
+      <button class="btn btn-accent btn-block" type="submit">Count me in →</button>
+      <p class="micro">No marketing emails. No sharing your details. Just real updates as we ship.</p>
+    </form>
+  </section>
+
+  <!-- ========================= FAQ ========================= -->
+  <section class="section" id="faq">
+    <div class="head wrap">
+      <p class="tag">What people ask</p>
+      <h2 class="display faq-h">Straight answers.</h2>
+    </div>
+
+    <div class="wrap faq-list">
+      <div class="faq-item">
+        <p class="faq-num">01</p>
+        <div class="faq-body">
+          <h3 class="display faq-q">When does this launch?</h3>
+          <p class="faq-a">Wellington beta is on the way. Sign up to lock in your spot — founding members get in first.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-num">02</p>
+        <div class="faq-body">
+          <h3 class="display faq-q">Who's behind this?</h3>
+          <p class="faq-a">Wellington locals who couldn't find a homegrown way to rent and share vehicles. So we're building it. Reach out via the form anytime.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-num">03</p>
+        <div class="faq-body">
+          <h3 class="display faq-q">How will insurance work?</h3>
+          <p class="faq-a">Every WheelUp trip will come with cover — we're working with NZ insurers to nail the details. Sign up and we'll keep you posted as it shapes up.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-num">04</p>
+        <div class="faq-body">
+          <h3 class="display faq-q">What kind of vehicles?</h3>
+          <p class="faq-a">Cars and campervans — from your daily driver to your dream campervan. Real variety from real Wellingtonians.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-num">05</p>
+        <div class="faq-body">
+          <h3 class="display faq-q">What is WheelUp Pass?</h3>
+          <p class="faq-a">A paid perk for the people who use WheelUp most — extras like premium vehicle access, host bonuses, and member events. Tick the box on the form for first access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= CLOSING STRIP ========================= -->
+  <section class="section close" id="signup-last">
+    <h2 class="display close-h">One last time: sign up.</h2>
+    <p class="close-sub">Two fields. Twenty seconds. That's the whole thing.</p>
+
+    <form class="close-form" data-roam-form data-source="closing">
+      <label class="sr-only" for="close-email">Your email</label>
+      <input class="close-input" id="close-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <button class="btn btn-dark close-btn" type="submit">Count me in →</button>
+    </form>
+
+    <p class="close-micro">That's it. No drip emails. No surveys. We email when there's something to share.</p>
+  </section>
+
+</main>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="footer">
+  <div class="footer-logo">
+    <span class="footer-mark logo-speed"><i class="speed-mid" aria-hidden="true"></i>WheelUp</span>
+    <span class="footer-city">Wellington</span>
+  </div>
+  <div class="footer-right">
+    <a class="footer-meta" href="mailto:wheelupnz@gmail.com">wheelupnz@gmail.com</a>
+    <span class="footer-meta">© 2026 · Te Whanganui-a-Tara</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

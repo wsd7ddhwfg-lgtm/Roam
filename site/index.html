@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roam — Wellington's peer-to-peer vehicle rental marketplace</title>
+<title>WheelUp — Wellington's peer-to-peer vehicle rental marketplace</title>
 <meta name="description" content="Wellington's own peer-to-peer marketplace for cars and campervans. Built local, by locals — sign up for early access.">
 
-<meta property="og:title" content="Roam — Wellington's peer-to-peer vehicle rental marketplace">
+<meta property="og:title" content="WheelUp — Wellington's peer-to-peer vehicle rental marketplace">
 <meta property="og:description" content="Rent a car or campervan from a local, or earn from the one sitting in your driveway. Founding signups get in first.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_NZ">
@@ -54,10 +54,10 @@
 
 <!-- ========================= NAV ========================= -->
 <header class="nav">
-  <a class="nav-logo" href="#top">Roam/</a>
+  <a class="nav-logo logo-speed" href="#top"><i class="speed-mid" aria-hidden="true"></i>WheelUp</a>
   <nav class="nav-right" aria-label="Main">
     <a class="nav-link" href="#how">What it is</a>
-    <a class="nav-link" href="#destinations">Where you'd go</a>
+    <a class="nav-link" href="#destinations">Ways to use it</a>
     <a class="nav-link" href="#faq">Open questions</a>
     <a class="btn btn-accent btn-sm" href="#signup">Get early access</a>
   </nav>
@@ -67,14 +67,21 @@
 
   <!-- ========================= HERO ========================= -->
   <section class="hero">
-    <div class="chip">
-      <span class="chip-dot" aria-hidden="true"></span>
-      <span class="chip-label">Wellington · Now boarding</span>
+    <div class="hero-top">
+      <img class="hero-bg"
+           src="https://images.unsplash.com/photo-1788813197059-e531afbe4ab2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=2000"
+           alt="Cars of every kind on the motorway into central Wellington, with green hills and city towers behind"
+           width="1440" height="960" fetchpriority="high">
+
+      <div class="chip">
+        <span class="chip-dot" aria-hidden="true"></span>
+        <span class="chip-label">Wellington · Now boarding</span>
+      </div>
+
+      <h1 class="display hero-h">Your car, your rules,<br> your weekend.</h1>
+
+      <p class="hero-sub">Rent a car or campervan from someone in your neighbourhood, or earn money from yours. Made in Wellington, by locals — get in before everyone else.</p>
     </div>
-
-    <h1 class="display hero-h">Your car, your rules, your weekend.</h1>
-
-    <p class="hero-sub">Wellington's own peer-to-peer marketplace for cars and campervans. Built local, by locals — get in before everyone else.</p>
 
     <form class="form-card hero-form" data-roam-form data-source="hero">
       <p class="form-label" id="hero-interest-label">I'm interested in…</p>
@@ -82,7 +89,8 @@
       <div class="cb-list" role="group" aria-labelledby="hero-interest-label">
         <label class="cb"><input type="checkbox" name="interest" value="Renting a vehicle"> Renting a vehicle</label>
         <label class="cb"><input type="checkbox" name="interest" value="Listing my vehicle"> Listing my vehicle</label>
-        <label class="cb"><input type="checkbox" name="interest" value="Roam Pass"> Hearing about Roam Pass when it's ready</label>
+        <label class="cb"><input type="checkbox" name="interest" value="E-bikes, scooters or trailers"> Renting e-bikes, scooters or trailers</label>
+        <label class="cb"><input type="checkbox" name="interest" value="WheelUp Pass"> Hearing about WheelUp Pass when it's ready</label>
       </div>
 
       <div class="field-row">
@@ -101,61 +109,56 @@
     </form>
   </section>
 
-  <img class="hero-photo"
-       src="https://images.unsplash.com/photo-1765341068674-8f21ffaefbf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MDd8&ixlib=rb-4.1.0&q=80&w=1600"
-       alt="Open road winding through the New Zealand coast at dusk"
-       width="1440" height="480">
-
   <!-- ========================= DESTINATIONS ========================= -->
   <section class="section" id="destinations">
     <div class="head wrap">
-      <p class="tag">Where you'd go</p>
-      <h2 class="display dest-h">Coast. Wine. Mountains. Ferries.</h2>
-      <p class="lede">A few of the kinds of trips Wellingtonians take when they've got the right vehicle. The kinds of trips we want this to make easier.</p>
+      <p class="tag">Ways to use it</p>
+      <h2 class="display dest-h">Holidays. Work. Road trips. Everyday.</h2>
+      <p class="lede">Whatever gets you behind the wheel, there's a local with the right vehicle.</p>
     </div>
 
     <div class="wrap grid-2">
       <article class="card">
-        <img class="card-img" loading="lazy"
-             src="https://images.unsplash.com/photo-1721467990566-7fa58209c319?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MDh8&ixlib=rb-4.1.0&q=80&w=1080"
-             alt="Rugged surf breaking on Wellington's south coast" width="540" height="220">
+        <img class="card-img" loading="lazy" style="object-position: center 40%"
+             src="https://images.unsplash.com/photo-1756142008330-87dc106322a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="Kids waving from the windows of a big family SUV" width="540" height="220">
         <div class="card-body">
-          <p class="card-tag">Day trip</p>
-          <h3 class="display card-title">South Coast &amp; Seal Coast</h3>
-          <p class="card-desc">Wild surf, fur seals at Red Rocks, fish &amp; chips at Island Bay.</p>
+          <p class="card-tag">Holidays</p>
+          <h3 class="display card-title">Need a bigger car?</h3>
+          <p class="card-desc">Off on holiday with the whole family or a group of mates? Rent a bigger car, SUV or people-mover from someone nearby.</p>
         </div>
       </article>
 
       <article class="card">
         <img class="card-img" loading="lazy"
-             src="https://images.unsplash.com/photo-1660508477980-ac5307fe39dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MDl8&ixlib=rb-4.1.0&q=80&w=1080"
-             alt="Rows of vines in Wairarapa wine country" width="540" height="220">
+             src="https://images.unsplash.com/photo-1521014710171-f44dfe788ece?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="A campervan parked by the beach at sunset" width="540" height="220">
         <div class="card-body">
-          <p class="card-tag">Weekend</p>
-          <h3 class="display card-title">Wairarapa Wine Country</h3>
-          <p class="card-desc">Vineyards, dark-sky observatory, old colonial main streets.</p>
+          <p class="card-tag">Road trips</p>
+          <h3 class="display card-title">Campervan getaway</h3>
+          <p class="card-desc">Pack up and go. Coast, mountains, hidden bays — and sleep wherever the road takes you.</p>
         </div>
       </article>
 
       <article class="card">
-        <img class="card-img" loading="lazy"
-             src="https://images.unsplash.com/photo-1516509293217-e856dcfb86a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MTB8&ixlib=rb-4.1.0&q=80&w=1080"
-             alt="Sheltered bays of the Marlborough Sounds seen from above" width="540" height="220">
+        <img class="card-img" loading="lazy" style="object-position: center 70%"
+             src="https://images.unsplash.com/photo-1788813196707-f5b57dfe10ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="Cars on the street outside the Beehive in Wellington" width="540" height="220">
         <div class="card-body">
-          <p class="card-tag">3–5 days</p>
-          <h3 class="display card-title">Marlborough Sounds</h3>
-          <p class="card-desc">Ferry to Picton, Queen Charlotte Track, hidden bays.</p>
+          <p class="card-tag">Work &amp; new in town</p>
+          <h3 class="display card-title">In Wellington for work?</h3>
+          <p class="card-desc">Here for a conference, a business trip, or just moved to town? Get a car from a local for as long as you need it.</p>
         </div>
       </article>
 
       <article class="card">
-        <img class="card-img" loading="lazy"
-             src="https://images.unsplash.com/photo-1648716181138-8af016b80f38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3ODI0MzQ0MTB8&ixlib=rb-4.1.0&q=80&w=1080"
-             alt="Snow-covered volcanic peaks of the central plateau" width="540" height="220">
+        <img class="card-img" loading="lazy" style="object-position: center 60%"
+             src="https://images.unsplash.com/photo-1788813196652-34e07826988a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+             alt="Everyday traffic on a Wellington city street" width="540" height="220">
         <div class="card-body">
-          <p class="card-tag">Snow season</p>
-          <h3 class="display card-title">Tongariro &amp; Ruapehu</h3>
-          <p class="card-desc">Volcanic peaks, alpine drives, hot pools in winter.</p>
+          <p class="card-tag">Everyday</p>
+          <h3 class="display card-title">Need a second car?</h3>
+          <p class="card-desc">One car not enough this week? Rent another by the day or the week — or while yours is in the shop.</p>
         </div>
       </article>
     </div>
@@ -301,16 +304,16 @@
   <!-- ========================= WHY ROAM ========================= -->
   <section class="section why" id="why">
     <div class="head wrap">
-      <p class="tag">Why Roam</p>
+      <p class="tag">Why WheelUp</p>
       <h2 class="display why-h">Built local. Built to last.</h2>
-      <p class="lede">What makes Roam different — and why founding members are getting in now.</p>
+      <p class="lede">What makes WheelUp different — and why founding members are getting in now.</p>
     </div>
 
     <div class="wrap grid-3">
       <article class="why-card">
         <p class="card-tag">Wellington's own</p>
         <h3 class="display why-title">Built locally, by locals.</h3>
-        <p class="why-desc">Not a corporate marketplace launching its next city. Roam is built in Wellington, by people who want to rent and host here too.</p>
+        <p class="why-desc">Not a corporate marketplace launching its next city. WheelUp is built in Wellington, by people who want to rent and host here too.</p>
         <hr class="why-rule">
         <a class="why-link" href="#signup">Get in early — sign up below →</a>
       </article>
@@ -325,8 +328,8 @@
 
       <article class="why-card">
         <p class="card-tag">Pass coming</p>
-        <h3 class="display why-title">Roam Pass is on the way.</h3>
-        <p class="why-desc">A members' perk for the people who use Roam most. Premium vehicle access, host bonuses, member events. Tick the box on the form to be first to hear.</p>
+        <h3 class="display why-title">WheelUp Pass is on the way.</h3>
+        <p class="why-desc">A members' perk for the people who use WheelUp most. Premium vehicle access, host bonuses, member events. Tick the box on the form to be first to hear.</p>
         <hr class="why-rule">
         <a class="why-link" href="#signup">Tick the Pass box on the form →</a>
       </article>
@@ -338,7 +341,7 @@
     <div class="head">
       <p class="tag">Tell us you're interested</p>
       <h2 class="display bigform-h">Join the founding wave.</h2>
-      <p class="bigform-sub">Get in before Roam goes live in Wellington. Founding signups get first access, hear first, and roll with us from day one.</p>
+      <p class="bigform-sub">Get in before WheelUp goes live in Wellington. Founding signups get first access, hear first, and roll with us from day one.</p>
     </div>
 
     <form class="form-card big-form" data-roam-form data-source="big">
@@ -347,7 +350,8 @@
       <div class="cb-list" role="group" aria-labelledby="big-interest-label">
         <label class="cb"><input type="checkbox" name="interest" value="Renting a vehicle"> Renting a vehicle</label>
         <label class="cb"><input type="checkbox" name="interest" value="Listing my vehicle"> Listing my vehicle</label>
-        <label class="cb"><input type="checkbox" name="interest" value="Roam Pass"> Hearing about Roam Pass when it's ready</label>
+        <label class="cb"><input type="checkbox" name="interest" value="E-bikes, scooters or trailers"> Renting e-bikes, scooters or trailers</label>
+        <label class="cb"><input type="checkbox" name="interest" value="WheelUp Pass"> Hearing about WheelUp Pass when it's ready</label>
       </div>
 
       <div class="field">
@@ -398,7 +402,7 @@
         <p class="faq-num">03</p>
         <div class="faq-body">
           <h3 class="display faq-q">How will insurance work?</h3>
-          <p class="faq-a">Every Roam trip will come with cover — we're working with NZ insurers to nail the details. Sign up and we'll keep you posted as it shapes up.</p>
+          <p class="faq-a">Every WheelUp trip will come with cover — we're working with NZ insurers to nail the details. Sign up and we'll keep you posted as it shapes up.</p>
         </div>
       </div>
 
@@ -413,8 +417,8 @@
       <div class="faq-item">
         <p class="faq-num">05</p>
         <div class="faq-body">
-          <h3 class="display faq-q">What is Roam Pass?</h3>
-          <p class="faq-a">A paid perk for the people who use Roam most — extras like premium vehicle access, host bonuses, and member events. Tick the box on the form for first access.</p>
+          <h3 class="display faq-q">What is WheelUp Pass?</h3>
+          <p class="faq-a">A paid perk for the people who use WheelUp most — extras like premium vehicle access, host bonuses, and member events. Tick the box on the form for first access.</p>
         </div>
       </div>
     </div>
@@ -439,11 +443,11 @@
 <!-- ========================= FOOTER ========================= -->
 <footer class="footer">
   <div class="footer-logo">
-    <span class="footer-mark">Roam/</span>
+    <span class="footer-mark logo-speed"><i class="speed-mid" aria-hidden="true"></i>WheelUp</span>
     <span class="footer-city">Wellington</span>
   </div>
   <div class="footer-right">
-    <a class="footer-meta" href="mailto:hello@roam.co.nz">hello@roam.co.nz</a>
+    <a class="footer-meta" href="mailto:wheelupnz@gmail.com">wheelupnz@gmail.com</a>
     <span class="footer-meta">© 2026 · Te Whanganui-a-Tara</span>
   </div>
 </footer>
