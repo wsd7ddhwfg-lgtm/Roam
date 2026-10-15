@@ -45,6 +45,9 @@ function sendWelcome(e) {
   const email = answers[Q.email] || '';
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return;
 
+  // Someone signing up again only gets the welcome email the first time.
+  if (signedUpBefore_(e.source, e.response, email)) return;
+
   const name = answers[Q.name] || '';
 
   MailApp.sendEmail({
@@ -53,6 +56,18 @@ function sendWelcome(e) {
     subject: 'Welcome to WheelUp!',
     body: welcomeText_(name),
     htmlBody: welcomeHtml_(name),
+  });
+}
+
+function signedUpBefore_(form, current, email) {
+  const target = email.toLowerCase();
+  const currentId = current.getId();
+  return form.getResponses().some(function (r) {
+    if (r.getId() === currentId) return false;
+    return r.getItemResponses().some(function (ir) {
+      return ir.getItem().getTitle() === Q.email &&
+        String(ir.getResponse() || '').trim().toLowerCase() === target;
+    });
   });
 }
 

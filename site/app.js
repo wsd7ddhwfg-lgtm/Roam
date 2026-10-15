@@ -22,6 +22,23 @@ const COPY = {
   closing: 'That\'s it. We\'ll be in touch when there\'s something to share.',
 };
 
+// Once someone signs up, every form on the page (and on later visits from
+// this browser) shows "you're on the list" instead, so people don't sign up
+// twice by accident. The welcome-email script also skips repeat emails.
+const SIGNED_UP_KEY = 'wheelup-signed-up';
+
+function rememberSignup(email) {
+  try { localStorage.setItem(SIGNED_UP_KEY, email); } catch (err) { /* private mode — fine */ }
+}
+
+function rememberedSignup() {
+  try { return localStorage.getItem(SIGNED_UP_KEY) || ''; } catch (err) { return ''; }
+}
+
+function forgetSignup() {
+  try { localStorage.removeItem(SIGNED_UP_KEY); } catch (err) { /* nothing to forget */ }
+}
+
 function collect(form) {
   const data = new FormData(form);
   const interests = data.getAll('interest');
@@ -54,21 +71,58 @@ function note(form, kind, text) {
   form.appendChild(p);
 }
 
-function succeed(form) {
+function done(form, heading, text) {
+  if (!form.wheelupOriginal) form.wheelupOriginal = [...form.childNodes];
+
   const wrap = document.createElement('div');
   wrap.className = 'form-done';
   wrap.setAttribute('role', 'status');
 
   const h = document.createElement('p');
   h.className = 'display';
-  h.textContent = COPY.heading;
+  h.textContent = heading;
 
   const p = document.createElement('p');
-  p.textContent = COPY[form.dataset.source] || COPY.hero;
+  p.textContent = text;
 
-  wrap.append(h, p);
+  const again = document.createElement('button');
+  again.type = 'button';
+  again.className = 'form-again';
+  again.textContent = 'Sign up a different email';
+  again.addEventListener('click', resetAll);
+
+  wrap.append(h, p, again);
   form.replaceChildren(wrap);
+  return wrap;
+}
+
+function alreadyText(email) {
+  return email
+    ? 'We\'ve got you down as ' + email + '. We\'ll be in touch.'
+    : 'We\'ve got you down. We\'ll be in touch.';
+}
+
+function succeed(form, email) {
+  rememberSignup(email);
+  allForms().forEach(f => {
+    if (f === form) return;
+    done(f, COPY.heading, alreadyText(email));
+  });
+  const wrap = done(form, COPY.heading, COPY[form.dataset.source] || COPY.hero);
   wrap.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+function resetAll() {
+  forgetSignup();
+  allForms().forEach(f => {
+    if (f.wheelupOriginal) f.replaceChildren(...f.wheelupOriginal);
+    const button = f.querySelector('button[type="submit"]');
+    if (button) button.disabled = false;
+  });
+}
+
+function allForms() {
+  return document.querySelectorAll('[data-roam-form]');
 }
 
 async function send(form) {
@@ -95,7 +149,8 @@ async function send(form) {
     // Google Forms doesn't send CORS headers, so the reply can't be read.
     // no-cors still delivers the answers; a network failure still throws.
     await fetch(GOOGLE_FORM.action, { method: 'POST', mode: 'no-cors', body });
-    succeed(form);
+    if (button) button.textContent = label;
+    succeed(form, answers.email);
   } catch (err) {
     console.error('[wheelup] sign-up failed:', err);
     if (button) { button.disabled = false; button.textContent = label; }
@@ -104,10 +159,15 @@ async function send(form) {
   }
 }
 
-document.querySelectorAll('[data-roam-form]').forEach(form => {
+allForms().forEach(form => {
   form.addEventListener('submit', event => {
     event.preventDefault();
     if (form.reportValidity && !form.reportValidity()) return;
     send(form);
   });
 });
+
+const returning = rememberedSignup();
+if (returning) {
+  allForms().forEach(f => done(f, 'You\'re already on the list.', alreadyText(returning)));
+}
