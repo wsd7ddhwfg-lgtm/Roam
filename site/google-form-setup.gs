@@ -88,6 +88,22 @@ function welcomeHtml_(name) {
   const p = 'margin:0 0 16px;font-size:16px;line-height:1.6;color:' + C.text2 + ';';
   const hello = name ? 'Kia ora ' + escapeHtml_(name) + ',' : 'Kia ora,';
 
+  // The leaning wordmark with speed lines, as on the website. Email apps
+  // ignore CSS transforms, so italic gives the lean and the lines are bars.
+  const logo = function (size, wordColor, lineColor) {
+    const bar = function (w, top) {
+      return '<div style="width:' + Math.round(size * w) + 'px;height:' + Math.max(2, Math.round(size * .12)) + 'px;' +
+        'margin:' + top + 'px 0 0 auto;background:' + lineColor + ';border-radius:2px;font-size:0;line-height:0;">&nbsp;</div>';
+    };
+    const gap = Math.round(size * .14);
+    return '<table role="presentation" cellpadding="0" cellspacing="0"><tr>' +
+      '<td valign="middle" style="padding-right:' + Math.round(size * .25) + 'px;">' +
+        bar(.8, 0) + bar(1.15, gap) + bar(.55, gap) +
+      '</td>' +
+      '<td valign="middle" style="' + display + 'font-style:italic;font-size:' + size + 'px;line-height:1;letter-spacing:1px;color:' + wordColor + ';">WheelUp</td>' +
+    '</tr></table>';
+  };
+
   const step = function (n, text) {
     return '<tr>' +
       '<td valign="top" style="padding:0 12px 12px 0;' + display + 'font-size:20px;color:' + C.chip + ';">0' + n + '</td>' +
@@ -104,7 +120,7 @@ function welcomeHtml_(name) {
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;">' +
 
       // Logo
-      '<tr><td style="padding:0 0 24px;' + display + 'font-size:28px;letter-spacing:1px;color:' + C.text + ';">WheelUp</td></tr>' +
+      '<tr><td style="padding:0 0 24px;">' + logo(28, C.text, C.accent) + '</td></tr>' +
 
       // Card
       '<tr><td style="background:#FFFFFF;border:1px solid ' + C.border + ';border-radius:10px;padding:40px 32px;">' +
@@ -139,7 +155,7 @@ function welcomeHtml_(name) {
       '<tr><td style="padding:24px 0 0;">' +
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' + C.text + ';border-radius:10px;">' +
           '<tr><td style="padding:24px 32px;">' +
-            '<div style="' + display + 'font-size:22px;letter-spacing:1px;color:' + C.accent + ';">WheelUp <span style="' + mono + 'font-size:11px;color:#A1A1AA;">Wellington</span></div>' +
+            logo(22, C.accent, '#FFFFFF') +
             '<div style="padding-top:8px;' + mono + 'font-size:11px;color:#A1A1AA;">' +
               '<a href="mailto:wheelupnz@gmail.com" style="color:#A1A1AA;text-decoration:none;">wheelupnz@gmail.com</a> &middot; Te Whanganui-a-Tara' +
             '</div>' +
